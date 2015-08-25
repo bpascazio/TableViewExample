@@ -25,6 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource  {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         println("numberOfRowsInSection was called")
         return things.count
@@ -33,6 +34,10 @@ class ViewController: UIViewController, UITableViewDataSource  {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         println("cellForRowAtIndexPath was called")
         let cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        if let label_ = cell.textLabel {
+            label_.text = things[indexPath.row]
+        }
+        cell.accessoryType = .Checkmark
         return cell
     }
 }
