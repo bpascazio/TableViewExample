@@ -10,11 +10,14 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource  {
 
-    let things = [String]()
+    var things = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        things.append("coke")
+        things.append("sprite")
+        things.append("pepsi")
     }
 
     override func didReceiveMemoryWarning() {
